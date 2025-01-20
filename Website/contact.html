@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSON笛聲</title>
+
+    <link rel="website icon" type="png" href="Image/DSON logo.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #00e6fe;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Image/Background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px 40px;
+            height: 80px;
+            overflow: visible;
+        }
+
+        .gradient-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #00e6fe 75%);
+            z-index: 1;
+        }
+
+        .image-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Image/WebBanner.jpg');
+            background-size: 150%;
+            background-position: 60% center;
+            z-index: 0;
+            transition: background-position 0.3s ease-out;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            margin-right: 20px;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: background-color 0.5s ease, transform 0.3s ease;
+        }
+
+        .menu-icon:hover div {
+            background-color: #005775;
+            transform: scale(1.2);
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            margin-left: 20px;
+            z-index: 2;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #0b2244;
+            padding: 10px 20px;
+            margin: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.5s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #005775;
+            box-shadow: 0 0 20px 10px rgba(0, 87, 117, 0.8);
+            transform: scale(1.2);
+            color: #00e6fe;
+            border-radius: 10px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: transparent;
+            color: #0b2244;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.5s ease;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            margin: 10px 15px;
+        }
+
+        .dropbtn:hover {
+            background-color: #005775;
+            box-shadow: 0 0 20px 10px rgba(0, 87, 117, 0.8);
+            transform: scale(1.1);
+            color: #00e6fe;
+            border-radius: 10px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #00e6fe;
+            width: 150px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 87, 117, 0.8);
+            z-index: 9999;
+            border-radius: 5px;
+            margin-top: -2px;
+            padding: 10px 20px;
+        }
+
+        .dropdown-content a {
+            text-align: center;
+            color: black;
+            padding: 8px 15px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #005775;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -10px;
+        }
+
+        .content h2 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bolder;
+        }
+
+        .content p {
+            font-size: 20px;
+            line-height: 1.6;
+            font-weight: lighter;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content h2 {
+                text-align: center;
+                font-size: 32px;
+            }
+
+            .content p {
+                font-size: 18px;
+            }
+
+            .image-layer {
+                background-size: 200%;
+                background-position: 38%;
+            }
+
+            .menu-icon {
+                display: flex;
+                padding: 0 5px;
+                color: #0b2244;
+                z-index: 3;
+            }
+
+            .menu-icon:hover {
+                background-color: #005775;
+                color: #00e6fe;
+                box-shadow: 0 0 20px 10px rgba(0, 87, 117, 0.8);
+                padding: 0 5px;
+                transform: scale(1.2);
+                border-radius: 10px;
+                transition: transform 0.3s ease, box-shadow 0.5s ease;
+            }
+
+            .navbar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 250px;
+                width: 150px;
+                background-color: rgb(0, 230, 254);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                z-index: 1000;
+                border-radius: 10px;
+            }
+
+            .dropdown-content {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                transform: translateY(0);
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                display: none;
+            }
+
+            .dropdown-content a {
+                text-align: center;
+                color: black;
+                padding: 8px 10px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .navbar.active {
+                display: flex;
+            }
+
+            .overlay.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="gradient-layer"></div>
+        <div class="image-layer"></div>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <nav class="navbar">
+            <a href="index.html">首頁</a>
+            <div class="dropdown">
+                <button class="dropbtn">作品集</button>
+                <div class="dropdown-content">
+                    <a href="illustration.html" id="link-illustration">插圖</a>
+                    <a href="photo.html" id="link-photo">照片</a>
+                    <a href="video.html" id="link-video">影片</a>
+                    <a href="uiux.html" id="link-uiux">UI/UX設計</a>
+                </div>
+            </div>
+            <a href="socialmedia.html">社交媒體</a>
+            <a href="contact.html">聯絡我</a>
+        </nav>
+    </header>
+
+    <div class="overlay" onclick="toggleMenu()"></div>
+
+    <main>
+        <div class="content">
+            <h2>聯絡我</h2>
+        </div>
+        <div class="portfolio">
+            <p>我的聯繫方式</p>
+        </div>
+    </main>
+
+    <script>
+        const imageLayer = document.querySelector('.image-layer');
+        const header = document.querySelector('header');
+
+        imageLayer.style.backgroundSize = '150%';
+        imageLayer.style.backgroundPosition = '38% 50%';
+
+        header.addEventListener('mousemove', (event) => {
+            const rect = imageLayer.getBoundingClientRect();
+            const x = ((event.clientX - rect.left) / rect.width - 0.38) * 20;
+            const y = ((event.clientY - rect.top) / rect.height - 0.5) * 5;
+
+            imageLayer.style.backgroundPosition = `${38 + x}% ${50 + y}%`;
+        });
+
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            const overlay = document.querySelector('.overlay');
+            navbar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
