@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <meta name="description" content="DSON笛聲，專注於圖像處理、像素藝術、3D 模型設計的展示網站。">
-    <title>DSON笛聲</title>
+    <meta name="description" content="DSON，a personal website focusing on image synthesis, video editing, and pixel art.">
+    <title>DSON</title>
 
     <link rel="website icon" type="png" href="Image/DSON logo.png">
     <style>
@@ -124,7 +124,7 @@
             height: 40px;
             display: flex;
             align-items: center;
-            margin: 10px 15px;
+            margin: 12px 15px;
         }
 
         .dropbtn:hover {
@@ -141,7 +141,7 @@
             top: 100%;
             left: 0;
             background-color: #00e6fe;
-            width: 150px;
+            width: 200px;
             box-shadow: 0px 8px 16px 0px rgba(0, 87, 117, 0.8);
             z-index: 9999;
             border-radius: 5px;
@@ -312,7 +312,7 @@
                 top: 0;
                 left: 0;
                 height: 250px;
-                width: 150px;
+                width: 200px;
                 background-color: rgb(0, 230, 254);
                 flex-direction: column;
                 align-items: center;
@@ -377,18 +377,18 @@
         <div class="image-layer"></div>
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <nav class="navbar">
-            <a href="index.html">主頁</a>
+            <a href="index.html">Home</a>
             <div class="dropdown">
-                <button class="dropbtn">作品集</button>
+                <button class="dropbtn">Portfolio</button>
                 <div class="dropdown-content">
-                    <a href="illustration.html" id="link-illustration">插圖</a>
-                    <a href="photo.html" id="link-photo">照片</a>
-                    <a href="video.html" id="link-video">影片</a>
-                    <a href="uiux.html" id="link-uiux">UI/UX設計</a>
+                    <a href="illustration.html" id="link-illustration">Illustrations</a>
+                    <a href="photo.html" id="link-photo">Photos</a>
+                    <a href="video.html" id="link-video">Videos</a>
+                    <a href="uiux.html" id="link-uiux">UI/UX Design</a>
                 </div>
             </div>
-            <a href="socialmedia.html">社交媒體</a>
-            <a href="contact.html">聯絡我</a>
+            <a href="socialmedia.html">Social Media</a>
+            <a href="contact.html">Contact Me</a>
         </nav>
     </header>
 
@@ -396,14 +396,14 @@
 
     <main>
         <div class="content">
-            <h2>圖像合成</h2>
+            <h2>Image Manipulation</h2>
         </div>
         <div class="portfolio">
             <div class="image-container">
                 <img src="Image/ImageManipulation1.jpg" alt="Apocalypse" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
             </div>
             <div class="image-container">
-                <img src="Image/ImageManipulation2.jpg" alt="Drug" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/ImageManipulation2.jpg" alt="Substance Abuse" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
             </div>
         </div>
         <div id="imageModal" class="modal" onclick="closeModal(event)">
@@ -413,7 +413,7 @@
             </div>
         </div>
         <div class="content">
-            <h2>像素畫</h2>
+            <h2>Pixel Arts</h2>
         </div>
         <div class="portfolio">
             <div class="image-container">
@@ -430,7 +430,7 @@
             </div>
         </div>
         <div class="content">
-            <h2>3D模型室內設計</h2>
+            <h2>3D Modeling Interior Design</h2>
         </div>
         <div class="portfolio">
             <div class="image-container">
