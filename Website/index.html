@@ -1,350 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
-    <meta name="description" content="DSON，a personal website focusing on image synthesis, video editing, and pixel art.">
-    <title>DSON</title>
-
-    <link rel="website icon" type="png" href="Image/DSON logo.png">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #00e6fe;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Image/Background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        header {
-            position: relative;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 20px 40px;
-            height: 80px;
-            overflow: visible;
-        }
-
-        .gradient-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #00e6fe 75%);
-            z-index: 1;
-        }
-
-        .image-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('Image/WebBanner.jpg');
-            background-size: 150%;
-            background-position: 60% center;
-            z-index: 0;
-            transition: background-position 0.3s ease-out;
-        }
-
-        .menu-icon {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            margin-right: 20px;
-            align-items: center;
-            z-index: 2;
-        }
-
-        .menu-icon div {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            margin: 5px 0;
-            border-radius: 2px;
-            transition: background-color 0.5s ease, transform 0.3s ease;
-        }
-
-        .menu-icon:hover div {
-            background-color: #005775;
-            transform: scale(1.2);
-        }
-
-        .navbar {
-            display: flex;
-            flex-direction: row;
-            margin-left: 20px;
-            z-index: 2;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #0b2244;
-            padding: 10px 20px;
-            margin: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.5s ease;
-        }
-
-        .navbar a:hover {
-            background-color: #005775;
-            box-shadow: 0 0 20px 10px rgba(0, 87, 117, 0.8);
-            transform: scale(1.2);
-            color: #00e6fe;
-            border-radius: 10px;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropbtn {
-            background-color: transparent;
-            color: #0b2244;
-            padding: 10px 20px;
-            font-weight: bold;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.5s ease;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            margin: 12px 15px;
-        }
-
-        .dropbtn:hover {
-            background-color: #005775;
-            box-shadow: 0 0 20px 10px rgba(0, 87, 117, 0.8);
-            transform: scale(1.1);
-            color: #00e6fe;
-            border-radius: 10px;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #00e6fe;
-            width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 87, 117, 0.8);
-            z-index: 9999;
-            border-radius: 5px;
-            margin-top: -2px;
-            padding: 10px 25px;
-        }
-
-        .dropdown-content a {
-            text-align: center;
-            color: black;
-            padding: 8px 15px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #005775;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-
-        h1 {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-top: 60px;
-            margin-bottom: 40px;
-            margin-left: 5px;
-        }
-
-        .content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-        }
-
-        .content .left, .content .right {
-            width: 48%;
-        }
-
-        .content .left {
-            text-align: center;
-        }
-
-        .content .right {
-            color: #00e6fe;
-            padding-right: 80px;
-        }
-
-        .content h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-            font-weight: bolder;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .content p {
-            font-size: 20px;
-            line-height: 1.6;
-            font-weight: lighter;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .content.tools {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 40px 100px;
-        }
-
-        .tool img {
-            width: 60px;
-            height: auto;
-            transition: transform 0.3s ease;
-            margin-left: 80px;
-        }
-
-        .tool img:hover {
-            transform: scale(1.2);
-        }
-
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .content .left, .content .right {
-                width: 100%;
-                text-align: center;
-                padding-right: 0;
-            }
-
-            .content h2 {
-                font-size: 32px;
-            }
-
-            .content p {
-                font-size: 18px;
-            }
-
-            .content.tools {
-                justify-content: center;
-                flex-wrap: nowrap;
-                margin-top: 40px;
-            }
-
-            .tool img {
-                width: 20px;
-                height: auto;
-                transition: transform 0.3s ease;
-                margin-left: 4px;
-            }
-
-            .tool img:hover {
-                transform: scale(1.1);
-            }
-
-            .image-layer {
-                background-size: 200%;
-                background-position: 38%;
-            }
-
-            .menu-icon {
-                display: flex;
-                padding: 0 5px;
-                color: #0b2244;
-                z-index: 3;
-            }
-
-            .menu-icon:hover {
-                background-color: #005775;
-                color: #00e6fe;
-                box-shadow: 0 0 20px 10px rgba(0, 87, 117, 0.8);
-                padding: 0 5px;
-                transform: scale(1.2);
-                border-radius: 10px;
-                transition: transform 0.3s ease, box-shadow 0.5s ease;
-            }
-
-            .navbar {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                height: 250px;
-                width: 200px;
-                background-color: rgb(0, 230, 254);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px;
-                z-index: 1000;
-                border-radius: 10px;
-            }
-
-            .dropdown-content {
-                position: absolute;
-                top: 0;
-                left: 100%;
-                transform: translateY(0);
-                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                border-radius: 5px;
-                display: none;
-            }
-
-            .dropdown-content a {
-                text-align: center;
-                color: black;
-                padding: 8px 10px;
-                text-decoration: none;
-                display: block;
-            }
-
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            .navbar.active {
-                display: flex;
-            }
-
-            .overlay.active {
-                display: block;
-            }
-        }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+        <meta name="description" content="DSON，a personal website focusing on image synthesis, video editing, and pixel art.">
+        <title>DSON</title>
+    
+        <link rel="website icon" type="png" href="Image/DSON logo.png">
+        <link rel="stylesheet" href="DSON.css">
+    </head>
 <body>
     <header>
         <div class="gradient-layer"></div>
@@ -370,63 +34,60 @@
 
     <main>
         <div class="content">
-            <div class="left">
-                <img src="Image/DSON logo.png" alt="Profile Image" class="profile-image">
+            <h2>Image Manipulation</h2>
+        </div>
+        <div class="portfolio">
+            <div class="image-container">
+                <img src="Image/ImageManipulation1.jpg" alt="Apocalypse" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
             </div>
-
-            <div class="right">
-                <h2>About Me</h2>
-                <p>
-                    Hello everyone! I am DSON, a multimedia design student passionate about creating engaging content.
-                    I specialize in video editing, UI/UX design, and have a keen interest in animation and game design.
-                </p>
-                <p>
-                    I am active on multiple social platforms, including YouTube, Bilibili, Instagram, TikTok, Xiaohongshu (Rednote), and X (Twitter). 
-                    YouTube and Bilibili are my main platforms for content creation. If you are also a fan of "Call of Duty Mobile," 
-                    feel free to follow me and explore the endless possibilities of this game together!
-                </p>
-                <p>
-                    My goal is to turn creativity into works that resonate with people and share my passion with the world. 
-                    To learn more, check out my portfolio or connect with me through social media!
-                </p>
+            <div class="image-container">
+                <img src="Image/ImageManipulation2.jpg" alt="Substance Abuse" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
             </div>
         </div>
-        <div class="content tools">
-            <div class="tool">
-                <img src="Image/Pr2.png" alt="Adobe Premiere Pro" class="adobe-premiere-pro">
-                <img src="Image/Ps2.png" alt="Adobe Photoshop" class="adobe-photoshop">
-                <img src="Image/Ai2.png" alt="Adobe Illustrator" class="adobe-illustrator">
-                <img src="Image/Ae.png" alt="Adobe After Effects" class="adobe-after-effects">
-                <img src="Image/Au2.png" alt="Adobe Audition" class="adobe-audition">
+        <div id="imageModal" class="modal" onclick="closeModal(event)">
+            <div class="modal-content">
+                <img id="modalImg" class="modal-image" />
+                <div id="caption"></div>
+            </div>
+        </div>
+        <div class="content">
+            <h2>Pixel Arts</h2>
+        </div>
+        <div class="portfolio">
+            <div class="image-container">
+                <img src="Image/PixelArt1.png" alt="2D Game character design (boy)" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+            </div>
+            <div class="image-container">
+                <img src="Image/PixelArt2.png" alt="2D Game character design (girl)" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+            </div>
+            <div class="image-container">
+                <img src="Image/pixelart3.png" alt="Soldier" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+            </div>
+            <div class="image-container">
+                <img src="Image/pixelart4.jpg" alt="Pixel Art Poster" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+            </div>
+        </div>
+        <div class="content">
+            <h2>3D Modeling Interior Design</h2>
+        </div>
+        <div class="portfolio">
+            <div class="image-container">
+                <img src="Image/final project 2.jpg" alt="Kitchen side angle (right)" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+            </div>
+            <div class="image-container">
+                <img src="Image/final project 3.jpg" alt="Kitchen side angle (left)" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+            </div>
+            <div class="image-container">
+                <img src="Image/final project 4.jpg" alt="Kitchen front angle" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+            </div>
+            <div class="image-container">
+                <img src="Image/final project 5.jpg" alt="Kitchen left angle (close up)" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+            </div>
+            <div class="image-container">
+                <img src="Image/final project 6.jpg" alt="Kitchen right angle (close up)" onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
             </div>
         </div>
     </main>
-
-    <script>
-        const imageLayer = document.querySelector('.image-layer');
-        const header = document.querySelector('header');
-
-        imageLayer.style.backgroundSize = '150%';
-        imageLayer.style.backgroundPosition = '38% 50%';
-
-        header.addEventListener('mousemove', (event) => {
-            const rect = imageLayer.getBoundingClientRect();
-            const x = ((event.clientX - rect.left) / rect.width - 0.38) * 20;
-            const y = ((event.clientY - rect.top) / rect.height - 0.5) * 5;
-
-            imageLayer.style.backgroundPosition = `${38 + x}% ${50 + y}%`;
-        });
-
-        header.addEventListener('mouseleave', () => {
-            imageLayer.style.backgroundPosition = '38% 50%';
-        });
-
-        function toggleMenu() {
-            const navbar = document.querySelector('.navbar');
-            const overlay = document.querySelector('.overlay');
-            navbar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        }
-    </script>
+    <script src="DSON.js" defer></script>
 </body>
 </html>
