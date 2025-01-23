@@ -396,9 +396,15 @@ border-radius: 50%;
   }
 
 @media (max-width: 768px) {
+    .header {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     .content {
         flex-direction: column;
         align-items: center;
+        overflow-x: hidden;
     }
 
     .content .left, .content .right {
