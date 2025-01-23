@@ -131,7 +131,7 @@ header {
     top: 100%;
     left: 0;
     background-color: #00e6fe;
-    width: 200px;
+    width: 250px;
     box-shadow: 0px 8px 16px 0px rgba(0, 87, 117, 0.8);
     z-index: 9999;
     border-radius: 5px;
@@ -170,6 +170,10 @@ header {
 h1 {
     text-align: center;
     margin-top: 40px;
+}
+
+.image-container {
+    will-change: transform;
 }
 
 .profile-image {
@@ -240,10 +244,12 @@ h1 {
 }
 
 .portfolio {
+    contain: layout;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 20px;
+    margin-left: 40px;
 }
 
 .portfolio img {
@@ -325,8 +331,8 @@ h1 {
 
 .img-comp-container {
 position: relative;
+aspect-ratio: 16 / 9;
 width: 100%;
-height: 350px;
 margin: 0;
 display: flex;
 justify-content: space-between;
@@ -345,9 +351,20 @@ box-shadow: 0px 0px 5px rgba(0, 230, 254, 0.8);
 .img-comp-img img {
 display: flex;
 vertical-align: middle;
-object-fit: cover;
+object-fit: contain;
 width: auto;
 height: 100%;
+}
+
+.img-comp-overlay img {
+display: flex;
+vertical-align: middle;
+object-fit: contain;
+width: auto;
+height: 100%;
+object-fit: cover;
+pointer-events: none;
+z-index: 1;
 }
 
 .img-comp-slider {
@@ -483,7 +500,8 @@ border-radius: 50%;
 
     .portfolio {
         grid-template-columns: repeat(2, 1fr);
-        margin-left: 5px;
+        margin-left: 2px;
+        margin-right: -20px;
     }
 
     .modal-content {
@@ -501,17 +519,40 @@ border-radius: 50%;
     }
 
     .photo-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         grid-template-columns: repeat(1, 1fr);
-        margin-left: 10px;
-        gap: 30px;
-    }
-      
-    .img-comp-container {
-        width: 125%;
+        margin-left: 0;
+        gap: 50px;
+        padding: 0 30px;
     }
 
-    .img-comp-container p{
+    .img-comp-container {
+        width: 100%;
+        margin-left: 80px;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .img-comp-img img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .img-comp-overlay img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+        pointer-events: none;
+    }
+
+    .img-comp-container p {
+        font-size: small;
         text-align: left;
         width: 60%;
+        padding: 0 10px;
     }
 }
