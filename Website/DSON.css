@@ -479,6 +479,7 @@ border-radius: 50%;
 
     .dropdown-content {
         position: absolute;
+        width: 180px;
         top: 0;
         left: 100%;
         transform: translateY(0);
@@ -488,6 +489,7 @@ border-radius: 50%;
     }
 
     .dropdown-content a {
+        font-size: smaller;
         text-align: center;
         color: black;
         padding: 8px 10px;
