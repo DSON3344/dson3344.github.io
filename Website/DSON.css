@@ -232,8 +232,10 @@ h1 {
 .content.tools {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    margin: 40px 100px;
+    margin: 20px 100px;
+    margin-left: 20px;
 }
 
 .tool img {
@@ -425,11 +427,14 @@ border-radius: 50%;
     }
 
     .content.tools {
+        display: flex;
         justify-content: center;
-        flex-wrap: nowrap;
-        margin-top: 40px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 20px 100px;
+        margin-left: -2px;
     }
-
+    
     .tool img {
         width: 20px;
         height: auto;
