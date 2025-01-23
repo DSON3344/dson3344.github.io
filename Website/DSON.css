@@ -1,4 +1,4 @@
-body {
+html, body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -9,6 +9,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow-x: hidden;
+    width: 100%;
 }
 
 header {
@@ -398,19 +399,19 @@ border-radius: 50%;
 @media (max-width: 768px) {
     .header {
         overflow-x: hidden;
-        width: 100%;
     }
 
     .content {
         flex-direction: column;
         align-items: center;
         overflow-x: hidden;
+        width: 100%;
     }
 
     .content .left, .content .right {
         width: 100%;
         text-align: center;
-        padding-right: 0;
+        padding: 0;
     }
 
     .content h2 {
@@ -508,8 +509,8 @@ border-radius: 50%;
 
     .portfolio {
         grid-template-columns: repeat(2, 1fr);
-        margin-left: 2px;
-        margin-right: -20px;
+        margin: 0 auto;
+        width: calc(100% - 20px);
     }
 
     .modal-content {
