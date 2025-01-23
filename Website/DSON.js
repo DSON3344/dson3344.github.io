@@ -109,3 +109,39 @@ function compareImages(img) {
 window.addEventListener('DOMContentLoaded', function () {
     initComparisons();
 });
+
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
+window.addEventListener('scroll', debounce(() => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        loadImages();
+    }
+}, 300));
+
+const batchSize = 8;
+let currentIndex = 0;
+
+function loadImages() {
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < batchSize && currentIndex < imageData.length; i++) {
+        const imgDiv = document.createElement('div');
+        imgDiv.className = 'image-container';
+
+        const img = document.createElement('img');
+        img.dataset.src = imageData[currentIndex].src;
+        img.alt = imageData[currentIndex].alt;
+
+        imgDiv.appendChild(img);
+        fragment.appendChild(imgDiv);
+
+        currentIndex++;
+    }
+    container.appendChild(fragment);
+    lazyLoadImages();
+}
