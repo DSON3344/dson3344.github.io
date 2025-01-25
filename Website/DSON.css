@@ -432,7 +432,7 @@ figcaption {
     padding: 20px;
     box-sizing: border-box;
     margin-left: 60px;
-    gap: 10px;
+    gap: 2px;
 }
 
 .socialmedia-icon {
@@ -785,10 +785,20 @@ figcaption {
     }
     
     .socialmedia-page {
-        width: 85%;
+        width: 90%;
+        max-width: 100%;
         height: 240px;
         margin-bottom: 20px;
         margin-left: 0;
         margin-right: 0;
+        overflow: hidden;
+    }
+
+    .socialmedia-page img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        border-radius: 5px;
     }
 }
