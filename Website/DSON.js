@@ -151,3 +151,49 @@ function flipCard(card) {
     const cardInner = card.querySelector('.flip-card-inner');
     cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
 }
+
+const video = document.querySelector('video');
+
+document.addEventListener('fullscreenchange', toggleFullScreenClass);
+document.addEventListener('webkitfullscreenchange', toggleFullScreenClass);
+document.addEventListener('mozfullscreenchange', toggleFullScreenClass);
+document.addEventListener('MSFullscreenChange', toggleFullScreenClass);
+
+function toggleFullScreenClass() {
+    if (document.fullscreenElement || 
+        document.webkitFullscreenElement || 
+        document.mozFullScreenElement || 
+        document.msFullscreenElement) {
+        video.classList.add('fullscreen');
+    } else {
+        video.classList.remove('fullscreen');
+    }
+}
+
+video.addEventListener('dblclick', toggleVideoFullScreen);
+
+function toggleVideoFullScreen() {
+    if (!document.fullscreenElement && 
+        !document.webkitFullscreenElement && 
+        !document.mozFullScreenElement && 
+        !document.msFullscreenElement) {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+            video.mozRequestFullScreen();
+        } else if (video.msRequestFullscreen) {
+            video.msRequestFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
