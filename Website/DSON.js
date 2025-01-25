@@ -1,4 +1,3 @@
-
 const imageLayer = document.querySelector('.image-layer');
 const header = document.querySelector('header');
 
@@ -150,5 +149,11 @@ function loadImages() {
 function flipCard(card) {
     const cardInner = card.querySelector('.flip-card-inner');
     cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+}
 
+function toggleMenu() {
+    const navbar = document.querySelector('.navbar');
+    const overlay = document.querySelector('.overlay');
+    navbar.classList.toggle('active');
+    overlay.classList.toggle('active');
 }
