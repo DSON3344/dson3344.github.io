@@ -1,3 +1,4 @@
+
 const imageLayer = document.querySelector('.image-layer');
 const header = document.querySelector('header');
 
@@ -144,4 +145,9 @@ function loadImages() {
     }
     container.appendChild(fragment);
     lazyLoadImages();
+}
+
+function flipCard(card) {
+    const cardInner = card.querySelector('.flip-card-inner');
+    cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
 }
