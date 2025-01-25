@@ -567,6 +567,84 @@ figcaption {
     transform-style: preserve-3d;
 }
 
+.contact-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #0b2244;
+}
+
+.contact-header {
+    position: relative;
+    z-index: 10;
+}
+
+.contact-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 90px);
+}
+
+.contact-content {
+    background: #00e6fe;
+    padding: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 5px rgba(0, 230, 254, 0.7);
+    width: 500px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.contact-h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0b2244;
+}
+
+.contact-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #0b2244;
+}
+
+.contact-input, .contact-textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 2px solid #0b2244;
+    border-radius: 4px;
+    color: #0b2244;
+    background-color: #00e6fe;
+}
+
+.contact-input::placeholder, .contact-textarea::placeholder {
+    color: #005775;
+}
+
+.contact-btn {
+    width: 50%;
+    background-color: #0b2244;
+    color: #00e6fe;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    margin-left: 110px;
+}
+
+.contact-btn:hover {
+    background-color: #005775;
+    color: #00e6fe;
+    box-shadow: 0 0 10px 5px rgba(0, 87, 117, 0.8);
+    transform: scale(1.1);
+    transition: transform 0.3s ease, box-shadow 0.5s ease;
+}
 
 @media (max-width: 768px) {
     .header {
@@ -627,7 +705,24 @@ figcaption {
         z-index: 3;
     }
 
+    .contact-menu-icon {
+        display: flex;
+        padding: 0 5px;
+        color: #0b2244;
+        z-index: 3;
+    }
+
     .menu-icon:hover {
+        background-color: #005775;
+        color: #00e6fe;
+        box-shadow: 0 0 20px 10px rgba(0, 87, 117, 0.8);
+        padding: 0 5px;
+        transform: scale(1.2);
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.5s ease;
+    }
+
+    .contact-menu-icon:hover {
         background-color: #005775;
         color: #00e6fe;
         box-shadow: 0 0 20px 10px rgba(0, 87, 117, 0.8);
@@ -800,5 +895,28 @@ figcaption {
         object-fit: contain;
         display: block;
         border-radius: 5px;
+    }
+
+    .contact-content {
+        width: 85%;
+        margin-top: 200px;
+        margin-bottom: 30px;
+    }
+
+    .contact-btn {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .contact-h2 {
+        font-size: 20px;
+    }
+
+    .contact-input, .contact-textarea {
+        padding: 12px;
+    }
+
+    .contact-label {
+        font-size: 14px;
     }
 }
