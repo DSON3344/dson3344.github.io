@@ -157,3 +157,26 @@ function toggleMenu() {
     navbar.classList.toggle('active');
     overlay.classList.toggle('active');
 }
+
+const headerImage = document.querySelector(".header-image");
+
+function handleOrientation(event) {
+    let moveX = event.gamma; // 左右 (-90 到 90)
+    let moveY = event.beta;  // 前后 (-180 到 180)
+
+    // 限制移动范围，防止过度偏移
+    moveX = Math.max(-30, Math.min(30, moveX));
+    moveY = Math.max(-30, Math.min(30, moveY));
+
+    // 降低灵敏度 (调整数值可微调效果)
+    moveX *= 0.5;  
+    moveY *= 0.5;
+
+    // 平滑移动，加入 3D 视差效果
+    headerImage.style.transform = `translate(${moveX}px, ${moveY}px) 
+                                   rotateX(${moveY * -0.2}deg) 
+                                   rotateY(${moveX * 0.2}deg)`;
+}
+
+// 监听陀螺仪事件
+window.addEventListener("deviceorientation", handleOrientation);
