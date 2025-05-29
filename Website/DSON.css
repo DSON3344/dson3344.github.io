@@ -765,16 +765,19 @@ figcaption {
     .tool {
         display: flex;
         flex-wrap: nowrap;
+        justify-content: center;
         gap: 16px;
+        min-width: max-content; /* 保证内部内容不会被压缩裁切 */
     }
 
     .tool img {
-        width: 60px;
+        width: 50px;
         height: auto;
         flex-shrink: 0;
         margin: 0;
     }
 
+    /* 可选：隐藏滚动条美化 */
     .content.tools::-webkit-scrollbar {
         display: none;
     }
