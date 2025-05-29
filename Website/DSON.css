@@ -23,6 +23,16 @@ header {
     width: 100%;
 }
 
+.site-footer {
+    text-align: center;
+    padding: 2rem 2rem 2rem;
+    font-size: 0.9rem;
+    color: #0b2244;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #00e6fe;
+    margin-top: 4rem;
+}
+
 .gradient-layer {
     position: absolute;
     top: 0;
@@ -180,13 +190,73 @@ h1 {
 }
 
 .profile-image {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #00e6fe;
+    box-shadow: 0 0 24px #00e6fe;
+    border: 6px solid #00e6fe;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
     margin-top: 60px;
     margin-bottom: 40px;
     margin-left: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    border: 6px solid #00e6fe;
+    box-shadow: 0 0 48px rgba(0, 255, 255, 0.5);
+    border: 2px solid rgba(0, 255, 255, 0.2);
+}
+
+.image-wrapper {
+  width: 200px;
+  height: 200px;
+  border: 6px solid #00e6fe;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.flip-logo-wrapper {
+    margin-left: 250px;
+    width: 150px;
+    height: 150px;
+}
+
+.flip-logo {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-logo-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-logo.flipped .flip-logo-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-logo-front, .flip-logo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-logo-back {
+    transform: rotateY(180deg);
 }
 
 .content {
@@ -651,6 +721,55 @@ figcaption {
         overflow-x: hidden;
     }
 
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-top: 90px;
+        margin-bottom: 40px;
+        margin-left: 5px;
+    }
+
+    .flip-logo-wrapper {
+        margin-left: 165px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .flip-logo {
+        width: 100%;
+        height: 100%;
+        perspective: 1000px;
+        cursor: pointer;
+    }
+
+    .flip-logo-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-logo.flipped .flip-logo-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-logo-front, .flip-logo-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .flip-logo-back {
+        transform: rotateY(180deg);
+    }
+
     .content {
         flex-direction: column;
         align-items: center;
@@ -685,12 +804,7 @@ figcaption {
     .tool img {
         width: 20px;
         height: auto;
-        transition: transform 0.3s ease;
         margin-left: 4px;
-    }
-
-    .tool img:hover {
-        transform: scale(1.1);
     }
 
     .image-layer {
@@ -880,8 +994,8 @@ figcaption {
     }
     
     .socialmedia-page {
-        width: 90%;
-        max-width: 100%;
+        width: 70%;
+        max-width: 80%;
         height: 200px;
         margin-bottom: 20px;
         margin-left: 0;
