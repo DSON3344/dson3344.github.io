@@ -722,17 +722,22 @@ figcaption {
     }
 
     .profile-image {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin: 90px auto 40px auto;
+        width: 180px;
+        height: 180px;
+        margin: 40px auto;
+        display: block;
     }
 
     .flip-logo-wrapper {
-        margin-left: 165px;
-        width: 150px;
-        height: 150px;
+        margin: 20px auto;
+        width: 120px;
+        height: 120px;
+    }
+
+    .image-wrapper {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
     }
 
     .flip-logo {
