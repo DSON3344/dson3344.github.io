@@ -23,6 +23,14 @@ function toggleMenu() {
     overlay.classList.toggle('active');
 }
 
+function toggleFlip(container) {
+    container.classList.toggle('flipped');
+}
+
+function toggleFlip(element) {
+    element.classList.toggle("flipped");
+}
+
 function openModal(img) {
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImg');
@@ -146,9 +154,33 @@ function loadImages() {
     lazyLoadImages();
 }
 
+function toggleFullscreenClass() {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        const isFullscreen =
+            document.fullscreenElement === video ||
+            document.webkitFullscreenElement === video ||
+            document.mozFullScreenElement === video ||
+            document.msFullscreenElement === video;
+
+        if (isFullscreen) {
+            video.classList.add('fullscreen');
+        } else {
+            video.classList.remove('fullscreen');
+        }
+    });
+}
+
+document.addEventListener('fullscreenchange', toggleFullscreenClass);
+document.addEventListener('webkitfullscreenchange', toggleFullscreenClass);
+document.addEventListener('mozfullscreenchange', toggleFullscreenClass);
+document.addEventListener('MSFullscreenChange', toggleFullscreenClass);
+
 function flipCard(card) {
-    const cardInner = card.querySelector('.flip-card-inner');
-    cardInner.style.transform = cardInner.style.transform === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
+    const inner = card.querySelector('.flip-card-inner');
+    inner.style.transform = inner.style.transform === 'rotateY(180deg)'
+        ? 'rotateY(0deg)'
+        : 'rotateY(180deg)';
 }
 
 function toggleMenu() {
