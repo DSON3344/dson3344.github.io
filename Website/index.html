@@ -2,19 +2,20 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-        <meta name="description" content="DSON is a multimedia design portfolio showcasing video editing, UI/UX design, digital illustration, animation, and game design. Follow DSON on YouTube, Bilibili, Instagram, TikTok, Xiaohongshu (Red), and X (Twitter) for creative content and Call of Duty Mobile gameplay.">
-        <title>DSON - Multimedia Design & Video Editing</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DSON | Video Editing Portfolio</title>
+        <link rel="stylesheet" href="DSON.css">
+        <link rel="icon" type="png" href="Image/DSON logo.png">
     
-        <meta property="og:title" content="DSON - Multimedia Design & Video Editing">
-        <meta property="og:description" content="Explore DSON's portfolio in video editing, UI/UX design, animation, and Call of Duty Mobile content.">
+        <meta property="og:title" content="DSON | Video Editing Portfolio">
+        <meta property="og:description" content="DSON is a multimedia designer showcasing work in video editing, digital illustration, 3D modeling, animation, and esports-related content. Discover original creations and connect across platforms.">
         <meta property="og:image" content="https://dson3344.github.io/Website/Image/DSON logo.png">
         <meta property="og:url" content="https://dson3344.github.io/Website/index.html">
         <meta property="og:type" content="website">
     
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="DSON - Multimedia Design & Video Editing">
-        <meta name="twitter:description" content="Explore DSON's portfolio in video editing, UI/UX design, animation, and Call of Duty Mobile content.">
+        <meta name="twitter:title" content="DSON | Video Editing Portfolio">
+        <meta name="twitter:description" content="DSON is a multimedia designer showcasing work in video editing, digital illustration, 3D modeling, animation, and esports-related content. Discover original creations and connect across platforms.">
         <meta name="twitter:image" content="https://dson3344.github.io/Website/Image/DSON logo.png">
     
         <meta property="og:site_name" content="DSON">
@@ -25,7 +26,6 @@
         <meta property="og:see_also" content="https://www.xiaohongshu.com/user/profile/5d60f1db00000000010029cf">
         <meta property="og:see_also" content="https://twitter.com/DSON_04">
     
-        <link rel="website icon" type="png" href="https://dson3344.github.io/Website/Image/DSON logo.png">
         <link rel="stylesheet" href="DSON.css">
     </head>
 <body>
@@ -39,6 +39,7 @@
                 <button class="dropbtn">Portfolio</button>
                 <div class="dropdown-content">
                     <a href="illustration.html" id="link-illustration">Illustrations</a>
+                    <a href="3d modeling.html" id="link-3dmodeling">3D Modeling</a>
                     <a href="photo.html" id="link-photo">Photos</a>
                     <a href="video.html" id="link-video">Videos</a>
                 </div>
@@ -53,23 +54,33 @@
     <main>
         <div class="content">
             <div class="left">
-                <img src="Image/DSON logo.png" alt="Profile Image" class="profile-image">
+                <div class="flip-logo-wrapper">
+                <div class="flip-logo" onclick="toggleFlip(this)">
+                    <div class="flip-logo-inner">
+                    <div class="flip-logo-front">
+                        <img src="Image/DSON logo.png" alt="Profile Image" class="profile-image">
+                    </div>
+                    <div class="flip-logo-back">
+                        <img src="Image/Side Direction (Soft Box).jpg" alt="Back Image" class="profile-image">
+                    </div>
+                    </div>
+                </div>
+                </div>
             </div>
-
             <div class="right">
                 <h2>About Me</h2>
                 <p>
-                    Hello everyone! I am DSON, a multimedia design student passionate about creating engaging content.
-                    I specialize in video editing, UI/UX design, and have a keen interest in animation and game design.
+                    Hi there! I’m <strong>DSON</strong>, a multimedia design student with a deep passion for crafting engaging and meaningful digital experiences. 
+                    My expertise lies in video editing, UI/UX design, and I also enjoy diving into the worlds of animation and game design.
                 </p>
                 <p>
-                    I am active on multiple social platforms, including YouTube, Bilibili, Instagram, TikTok, Xiaohongshu (Rednote), and X (Twitter). 
-                    YouTube and Bilibili are my main platforms for content creation. If you are also a fan of "Call of Duty Mobile," 
-                    feel free to follow me and explore the endless possibilities of this game together!
+                    I actively share my creative journey across multiple platforms, including <strong>YouTube</strong>, <strong>Bilibili</strong>, <strong>Instagram</strong>, 
+                    <strong>TikTok</strong>, <strong>Xiaohongshu (Rednote)</strong>, and <strong>X (Twitter)</strong>. Among them, YouTube and Bilibili are my primary spaces for content creation. 
+                    If you're a fellow fan of <em>Call of Duty Mobile</em>, let’s connect and explore its exciting universe together!
                 </p>
                 <p>
-                    My goal is to turn creativity into works that resonate with people and share my passion with the world. 
-                    To learn more, check out my portfolio or connect with me through social media!
+                    My mission is to transform creativity into work that resonates, inspires, and connects. 
+                    Feel free to browse my portfolio or reach out through social media—I’d love to share my passion with you!
                 </p>
             </div>
         </div>
@@ -84,5 +95,8 @@
         </div>
     </main>
     <script src="DSON.js" defer></script>
+    <footer class="site-footer">
+        <p>© 2025 DSON. All rights reserved.</p>
+    </footer>
 </body>
 </html>
