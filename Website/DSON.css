@@ -732,6 +732,53 @@ figcaption {
         text-align: center;
     }
 
+    .content .right {
+        width: 100%;
+        color: #00e6fe;
+        padding: 0;
+        text-align: center;
+    }
+
+    .content h2 {
+        font-size: 28px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .content p {
+        font-size: 16px;
+        line-height: 1.6;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+    }
+
+    .content.tools {
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        padding: 10px 0;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tool {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 16px;
+    }
+
+    .tool img {
+        width: 60px;
+        height: auto;
+        flex-shrink: 0;
+        margin: 0;
+    }
+
+    .content.tools::-webkit-scrollbar {
+        display: none;
+    }
+
     .flip-logo-wrapper {
         width: 200px;
         height: 200px;
@@ -754,30 +801,6 @@ figcaption {
     .flip-logo-inner {
         width: 100%;
         height: 100%;
-    }
-    
-    .content h2 {
-        text-align: center;
-        font-size: 32px;
-    }
-
-    .content p {
-        font-size: 18px;
-    }
-
-    .content.tools {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin: 20px 100px;
-        margin-left: -2px;
-    }
-    
-    .tool img {
-        width: 20px;
-        height: auto;
-        margin-left: 4px;
     }
 
     .image-layer {
