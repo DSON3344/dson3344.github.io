@@ -27,10 +27,15 @@
         <meta property="og:see_also" content="https://twitter.com/DSON_04">
     
         <link rel="stylesheet" href="DSON.css">
-        <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-        <script>
-        (function() {
-            emailjs.init("NJRT3-4TjVfLih7n5");
+        
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "NJRT3-4TjVfLih7n5",
+            });
         })();
         </script>
     </head>
