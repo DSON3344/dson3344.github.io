@@ -10,7 +10,7 @@ function toggleMenu() {
 
       const formData = new FormData(this);
 
-      emailjs.send("service_dson3344", "template_dson3344", {
+      emailjs.send("service_dson3344","template_dson3344", {
         name: formData.get("name"),
         gender: formData.get("gender"),
         age: formData.get("age"),
