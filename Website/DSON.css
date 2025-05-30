@@ -721,6 +721,19 @@ figcaption {
         overflow-x: hidden;
     }
 
+    .profile-image {
+        box-shadow: 0 0 8px #00e6fe;
+        border: 4px solid #00e6fe;
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-image:hover {
+        box-shadow: 0 0 16px rgba(0, 255, 255, 0.4);
+        border: 4px solid rgba(0, 255, 255, 0.2);
+        transform: scale(1.03);
+    }
+
     .content {
         flex-direction: column;
         align-items: center;
@@ -756,31 +769,27 @@ figcaption {
 
     .content.tools {
         display: flex;
-        justify-content: center;
-        overflow-x: auto;
-        padding: 10px 0;
-        -webkit-overflow-scrolling: touch;
-    }
+        justify-content: center; /* 水平居中 */
+        padding: 0; /* 去掉多余内边距 */
+        margin: 0 auto; /* 居中外边距 */
+        max-width: 100vw; /* 限制宽度，防止溢出 */
+        overflow-x: hidden; /* 防止横向滚动 */
+        }
 
     .tool {
         display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        gap: 16px;
-        min-width: max-content; /* 保证内部内容不会被压缩裁切 */
-    }
+        justify-content: center; /* 让图标在父容器内也居中 */
+        align-items: center;
+        flex-wrap: nowrap; /* 不换行 */
+        margin: 0 auto;
+        max-width: 100%; /* 不超出容器 */
+        }
 
     .tool img {
         width: 50px;
         height: auto;
-        flex-shrink: 0;
-        margin: 0;
-    }
-
-    /* 可选：隐藏滚动条美化 */
-    .content.tools::-webkit-scrollbar {
-        display: none;
-    }
+        margin: 0 4px;
+        }
 
     .flip-logo-wrapper {
         width: 200px;
