@@ -512,7 +512,7 @@ figcaption {
     margin-top: 10px;
 }
 
-a {
+.person-link {
     color: inherit;
     text-decoration: none;
     font-size: 20px;
@@ -523,7 +523,7 @@ a {
     display: inline-block;
 }
 
-a:hover {
+.person-link:hover {
     color: #005775;
     transform: scale(1.02);
     font-size: 21px;
