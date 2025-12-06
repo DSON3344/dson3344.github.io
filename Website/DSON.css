@@ -1080,3 +1080,72 @@ figcaption {
         font-size: 14px;
     }
 }
+
+.uiux-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.prototype-left {
+    flex: 0 0 350px;
+    max-width: 350px;
+}
+
+.phone-mockup {
+    width: 100%;
+    height: 750px;
+    background: #000;
+    border-radius: 40px;
+    padding: 18px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+    position: relative;
+}
+
+.figma-prototype {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 26px;
+}
+
+.description-right {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.description-right h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.description-right p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .uiux-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .prototype-left, .description-right {
+        max-width: 100%;
+        flex: none;
+    }
+    .phone-mockup {
+        height: 600px;
+    }
+    .description-right {
+        margin-left: 0;
+        text-align: center;
+    }
+}
