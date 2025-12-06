@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -213,11 +214,11 @@ h1 {
 }
 
 .image-wrapper {
-  width: 200px;
-  height: 200px;
-  border: 6px solid #00e6fe;
-  overflow: hidden;
-  border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    border: 6px solid #00e6fe;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .flip-logo-wrapper {
@@ -245,7 +246,8 @@ h1 {
     transform: rotateY(180deg);
 }
 
-.flip-logo-front, .flip-logo-back {
+.flip-logo-front,
+.flip-logo-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -267,7 +269,8 @@ h1 {
     overflow-x: hidden;
 }
 
-.content .left, .content .right {
+.content .left,
+.content .right {
     width: 48%;
 }
 
@@ -365,8 +368,8 @@ h1 {
     display: none;
     justify-content: center;
     align-items: center;
-    position: fixed; 
-    z-index: 1000; 
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -407,7 +410,9 @@ h1 {
     word-wrap: break-word;
 }
 
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
 .photo-section {
     text-align: center;
@@ -418,55 +423,55 @@ h1 {
     gap: 150px;
     box-sizing: border-box;
     padding: 0;
-  }
+}
 
 .img-comp-container {
-position: relative;
-aspect-ratio: 16 / 9;
-width: 100%;
-margin: 0;
-display: flex;
-justify-content: space-between;
-text-align: center;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
 }
 
 .img-comp-img {
-position: absolute;
-width: 78%;
-height: 100%;
-overflow: hidden;
-border: 0.5px solid rgba(0, 230, 254, 0.8);
-box-shadow: 0px 0px 5px rgba(0, 230, 254, 0.8);
+    position: absolute;
+    width: 78%;
+    height: 100%;
+    overflow: hidden;
+    border: 0.5px solid rgba(0, 230, 254, 0.8);
+    box-shadow: 0px 0px 5px rgba(0, 230, 254, 0.8);
 }
 
 .img-comp-img img {
-display: flex;
-vertical-align: middle;
-object-fit: contain;
-width: auto;
-height: 100%;
+    display: flex;
+    vertical-align: middle;
+    object-fit: contain;
+    width: auto;
+    height: 100%;
 }
 
 .img-comp-overlay img {
-display: flex;
-vertical-align: middle;
-object-fit: contain;
-width: auto;
-height: 100%;
-object-fit: cover;
-pointer-events: none;
-z-index: 1;
+    display: flex;
+    vertical-align: middle;
+    object-fit: contain;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .img-comp-slider {
-position: absolute;
-z-index: 9;
-cursor: ew-resize;
-width: 30px;
-height: 30px;
-background-color: #005775;
-opacity: 0.9;
-border-radius: 50%;
+    position: absolute;
+    z-index: 9;
+    cursor: ew-resize;
+    width: 30px;
+    height: 30px;
+    background-color: #005775;
+    opacity: 0.9;
+    border-radius: 50%;
 }
 
 .img-comp-container p {
@@ -482,9 +487,9 @@ border-radius: 50%;
     padding-bottom: 2px;
     background: linear-gradient(to right, rgba(0, 87, 117, 1), rgba(0, 87, 117, 0));
     color: #00e6fe;
-  }
+}
 
-  .video-container {
+.video-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -496,7 +501,7 @@ border-radius: 50%;
 video {
     width: 100%;
     max-width: 800px;
-    border-style:double;
+    border-style: double;
     border-width: 5px;
     box-shadow: 0px 0px 20px rgba(0, 230, 254, 0.7);
     transition: all 0.3s ease-in-out;
@@ -718,7 +723,8 @@ figcaption {
     color: #0b2244;
 }
 
-.contact-input, .contact-textarea {
+.contact-input,
+.contact-textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 12px;
@@ -728,7 +734,8 @@ figcaption {
     background-color: #00e6fe;
 }
 
-.contact-input::placeholder, .contact-textarea::placeholder {
+.contact-input::placeholder,
+.contact-textarea::placeholder {
     color: #005775;
 }
 
@@ -778,7 +785,8 @@ figcaption {
         margin-top: 20px;
     }
 
-    .content .left, .content .right {
+    .content .left,
+    .content .right {
         width: 100%;
         text-align: center;
     }
@@ -807,27 +815,35 @@ figcaption {
 
     .content.tools {
         display: flex;
-        justify-content: center; /* 水平居中 */
-        padding: 0; /* 去掉多余内边距 */
-        margin: 0 auto; /* 居中外边距 */
-        max-width: 100vw; /* 限制宽度，防止溢出 */
-        overflow-x: hidden; /* 防止横向滚动 */
-        }
+        justify-content: center;
+        /* 水平居中 */
+        padding: 0;
+        /* 去掉多余内边距 */
+        margin: 0 auto;
+        /* 居中外边距 */
+        max-width: 100vw;
+        /* 限制宽度，防止溢出 */
+        overflow-x: hidden;
+        /* 防止横向滚动 */
+    }
 
     .tool {
         display: flex;
-        justify-content: center; /* 让图标在父容器内也居中 */
+        justify-content: center;
+        /* 让图标在父容器内也居中 */
         align-items: center;
-        flex-wrap: nowrap; /* 不换行 */
+        flex-wrap: nowrap;
+        /* 不换行 */
         margin: 0 auto;
-        max-width: 100%; /* 不超出容器 */
-        }
+        max-width: 100%;
+        /* 不超出容器 */
+    }
 
     .tool img {
         width: 50px;
         height: auto;
         margin: 0 4px;
-        }
+    }
 
     .flip-logo-wrapper {
         width: 200px;
@@ -962,7 +978,7 @@ figcaption {
         width: auto;
         height: auto;
     }
-    
+
     #caption {
         text-align: center;
         font-size: 16px;
@@ -1011,20 +1027,20 @@ figcaption {
         align-items: center;
         margin-left: 10px;
     }
-    
+
     .socialmedia-icon {
         justify-content: center;
         align-items: center;
         width: 50px;
         height: 50px;
     }
-    
+
     .icon-image {
         justify-content: center;
         align-items: center;
         width: 65%;
     }
-    
+
     .icon-image2 {
         justify-content: center;
         align-items: center;
@@ -1038,7 +1054,7 @@ figcaption {
         max-width: 100%;
         padding: 0 10px;
     }
-    
+
     .socialmedia-page {
         width: 90%;
         max-width: 100%;
@@ -1072,7 +1088,8 @@ figcaption {
         font-size: 20px;
     }
 
-    .contact-input, .contact-textarea {
+    .contact-input,
+    .contact-textarea {
         padding: 12px;
     }
 
@@ -1083,26 +1100,26 @@ figcaption {
 
 .uiux-container {
     display: flex;
-    gap: 20px;
+    gap: 60px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .prototype-left {
-    flex: 0 0 350px;
-    max-width: 350px;
+    flex: 0 0 450px;
+    max-width: 450px;
 }
 
 .phone-mockup {
     width: 100%;
-    height: 750px;
+    height: 850px;
     background: #000;
     border-radius: 40px;
     padding: 18px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
     position: relative;
 }
 
@@ -1115,20 +1132,10 @@ figcaption {
 
 .description-right {
     flex: 1 1 400px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 40px;
-}
-
-.description-right h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-.description-right p {
-    font-size: 1rem;
-    line-height: 1.6;
 }
 
 @media (max-width: 768px) {
@@ -1137,15 +1144,26 @@ figcaption {
         align-items: center;
         gap: 30px;
     }
-    .prototype-left, .description-right {
+
+    .prototype-left,
+    .description-right {
         max-width: 100%;
-        flex: none;
+        text-align: center;
     }
+
     .phone-mockup {
         height: 600px;
     }
+
+    .uiux-case-study:first-child .prototype-left {
+        order: 2;
+    }
+
+    .uiux-case-study:first-child .description-right {
+        order: 1;
+    }
+
     .description-right {
-        margin-left: 0;
-        text-align: center;
+        padding: 0 20px;
     }
 }
