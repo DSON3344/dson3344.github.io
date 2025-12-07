@@ -193,22 +193,117 @@ function toggleMenu() {
 const headerImage = document.querySelector(".header-image");
 
 function handleOrientation(event) {
-    let moveX = event.gamma; // 左右 (-90 到 90)
-    let moveY = event.beta;  // 前后 (-180 到 180)
+    let moveX = event.gamma;
+    let moveY = event.beta;
 
-    // 限制移动范围，防止过度偏移
     moveX = Math.max(-30, Math.min(30, moveX));
     moveY = Math.max(-30, Math.min(30, moveY));
 
-    // 降低灵敏度 (调整数值可微调效果)
-    moveX *= 0.5;  
+    moveX *= 0.5;
     moveY *= 0.5;
 
-    // 平滑移动，加入 3D 视差效果
     headerImage.style.transform = `translate(${moveX}px, ${moveY}px) 
                                    rotateX(${moveY * -0.2}deg) 
                                    rotateY(${moveX * 0.2}deg)`;
 }
 
-// 监听陀螺仪事件
 window.addEventListener("deviceorientation", handleOrientation);
+
+window.addEventListener("scroll", () => {
+    const button = document.getElementById("backToTop");
+    if (window.scrollY > 400) {
+        button.style.display = "flex";
+    } else {
+        button.style.display = "none";
+    }
+});
+
+document.getElementById("backToTop").addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+let currentImgIndex = 0;
+let modal = document.getElementById('imageModal');
+let modalImg = document.getElementById('modalImg');
+let captionText = document.getElementById('caption');
+let allImgs = document.querySelectorAll('.portfolio img');
+
+let startX = 0;
+let currentTranslateX = 0;
+let isDragging = false;
+
+function openModal(img) {
+    modal.style.display = 'flex';
+    currentImgIndex = Array.from(allImgs).indexOf(img);
+    updateModalContent();
+    modalImg.style.transition = 'transform 0.3s ease';
+}
+
+function closeModal(event) {
+    if (event.target === modal || event === undefined) {
+        modal.style.display = 'none';
+    }
+}
+
+function updateModalContent(direction = 0) {
+    let img = allImgs[currentImgIndex];
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    captionText.innerText = img.alt;
+
+    if (direction !== 0) {
+        modalImg.style.transition = 'none';
+        modalImg.style.transform = `translateX(${direction * modal.offsetWidth}px)`;
+        setTimeout(() => {
+            modalImg.style.transition = 'transform 0.3s ease';
+            modalImg.style.transform = 'translateX(0)';
+        }, 10);
+    } else {
+        modalImg.style.transform = 'translateX(0)';
+    }
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeModal();
+    if (e.key === "ArrowLeft") changeImage(-1);
+    if (e.key === "ArrowRight") changeImage(1);
+});
+
+function changeImage(direction) {
+    const nextIndex = (currentImgIndex + direction + allImgs.length) % allImgs.length;
+
+    modalImg.style.transition = 'transform 0.1s ease';
+    modalImg.style.transform = `translateX(${-direction * modal.offsetWidth}px)`;
+
+    setTimeout(() => {
+        currentImgIndex = nextIndex;
+        updateModalContent(direction);
+    }, 100);
+}
+
+modalImg.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    modalImg.style.transition = 'none';
+});
+
+modalImg.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    let moveX = e.touches[0].clientX - startX;
+    currentTranslateX = moveX;
+    modalImg.style.transform = `translateX(${moveX}px)`;
+});
+
+modalImg.addEventListener('touchend', () => {
+    isDragging = false;
+    const threshold = modal.offsetWidth / 4;
+    if (currentTranslateX > threshold) {
+        changeImage(-1);
+    } else if (currentTranslateX < -threshold) {
+        changeImage(1);
+    } else {
+        modalImg.style.transition = 'transform 0.3s ease';
+        modalImg.style.transform = 'translateX(0)';
+    }
+    currentTranslateX = 0;
+});
