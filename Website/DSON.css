@@ -366,48 +366,75 @@ h1 {
 
 .modal {
     display: none;
-    justify-content: center;
-    align-items: center;
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 90%;
-    max-height: 80%;
+    max-height: 90%;
+    margin: auto;
+    position: relative;
 }
 
 .modal-image {
-    max-width: 100%;
-    max-height: 70vh;
+    max-width: 80vw;
+    max-height: 90vh;
     object-fit: contain;
-    object-position: center center;
-    margin: auto;
-    transition: transform 0.3s ease;
     background-color: white;
 }
 
-.modal-content:hover {
-    transform: none;
+.modal-prev,
+.modal-next {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(23, 131, 131, 0.5);
+    border: none;
+    border-radius: 50px;
+    color: #00e6fe;
+    font-size: 2rem;
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    z-index: 1100;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.modal-prev {
+    left: 50px;
+}
+
+.modal-next {
+    right: 50px;
+}
+
+.modal-prev:hover,
+.modal-next:hover {
+    transform: translateY(-50%) scale(1.2);
+    background-color: rgba(23, 131, 131, 0.8);
+    color: #ffffff;
+    opacity: 1;
+    box-shadow: 0 0 15px 5px rgba(0, 230, 254, 0.7);
 }
 
 #caption {
-    margin-top: 10px;
-    color: #00e6fe;
-    font-size: 18px;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
     text-align: center;
-    max-width: 90%;
-    word-wrap: break-word;
+    color: #00e6fe;
+    font-size: 1rem;
 }
 
 * {
@@ -816,31 +843,23 @@ figcaption {
     .content.tools {
         display: flex;
         justify-content: center;
-        /* 水平居中 */
         padding: 0;
-        /* 去掉多余内边距 */
         margin: 0 auto;
-        /* 居中外边距 */
         max-width: 100vw;
-        /* 限制宽度，防止溢出 */
         overflow-x: hidden;
-        /* 防止横向滚动 */
     }
 
     .tool {
         display: flex;
         justify-content: center;
-        /* 让图标在父容器内也居中 */
         align-items: center;
         flex-wrap: nowrap;
-        /* 不换行 */
         margin: 0 auto;
         max-width: 100%;
-        /* 不超出容器 */
     }
 
     .tool img {
-        width: 50px;
+        width: 25px;
         height: auto;
         margin: 0 4px;
     }
@@ -977,6 +996,11 @@ figcaption {
         max-height: 80%;
         width: auto;
         height: auto;
+    }
+
+    .modal-prev,
+    .modal-next {
+        display: none;
     }
 
     #caption {
@@ -1166,4 +1190,37 @@ figcaption {
     .description-right {
         padding: 0 20px;
     }
+}
+
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #005775;
+    color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: 0.3s;
+}
+
+.back-to-top:hover {
+    background: #0b2244;
+    transform: scale(1.1);
+}
+
+.back-to-top i {
+    color: #00e6fe !important;
+    font-size: 28px;
+}
+
+.back-to-top:hover i {
+    color: #90f8ff !important;
 }
