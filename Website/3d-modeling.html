@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DSON | 3D Modeling & Interior Design Portfolio</title>
+    <title data-lang="title">DSON | 3D Modeling & Interior Design Portfolio</title>
 
     <meta name="description"
         content="Explore DSON's 3D modeling portfolio, including interior design renders, character modeling, and environment design. Created using Maya, 3ds Max, and advanced rendering techniques.">
@@ -70,19 +70,19 @@
         <div class="image-layer"></div>
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <nav class="navbar">
-            <a href="index.html">Home</a>
+            <a href="index.html" data-lang="nav-home">Home</a>
             <div class="dropdown">
-                <button class="dropbtn">Portfolio</button>
+                <button class="dropbtn" data-lang="nav-portfolio">Portfolio</button>
                 <div class="dropdown-content">
-                    <a href="illustration.html" id="link-illustration">Illustrations</a>
-                    <a href="3d-modeling.html" id="link-3dmodeling">3D Modeling</a>
-                    <a href="photo.html" id="link-photo">Photos</a>
-                    <a href="video.html" id="link-video">Videos</a>
-                    <a href="ui-ux.html" id="link-ui-ux">UI/UX</a>
+                    <a href="illustration.html" data-lang="nav-illustration">Illustrations</a>
+                    <a href="3d-modeling.html" data-lang="nav-3dmodeling">3D Modeling</a>
+                    <a href="photo.html" data-lang="nav-photo">Photos</a>
+                    <a href="video.html" data-lang="nav-video">Videos</a>
+                    <a href="ui-ux.html" data-lang="nav-uiux">UI/UX</a>
                 </div>
             </div>
-            <a href="socialmedia.html">Social Media</a>
-            <a href="contact.html">Contact Me</a>
+            <a href="socialmedia.html" data-lang="nav-socialmedia">Social Media</a>
+            <a href="contact.html" data-lang="nav-contact">Contact Me</a>
         </nav>
     </header>
 
@@ -90,28 +90,28 @@
 
     <main>
         <div class="content">
-            <h2>3D Modeling Interior Design</h2>
+            <h2 data-lang="title-section-1">3D Modeling Interior Design</h2>
         </div>
         <div class="portfolio">
             <div class="image-container">
-                <img src="Image/final project 2.jpg" alt="Kitchen side angle (right)" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/final project 2.jpg" data-lang="alt-final-2" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/final project 3.jpg" alt="Kitchen side angle (left)" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/final project 3.jpg" data-lang="alt-final-3" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/final project 4.jpg" alt="Kitchen front angle" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/final project 4.jpg" data-lang="alt-final-4" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/final project 5.jpg" alt="Kitchen left angle (close up)" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/final project 5.jpg" data-lang="alt-final-5" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/final project 6.jpg" alt="Kitchen right angle (close up)" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/final project 6.jpg" data-lang="alt-final-6" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
         </div>
 
@@ -125,7 +125,7 @@
         </div>
 
         <div class="content">
-            <h2>3D Character Design & Environment Design Video Showreel</h2>
+            <h2 data-lang="title-section-2">3D Character Design & Environment Design Video Showreel</h2>
         </div>
         <div class="video-container">
             <figure>
@@ -133,46 +133,63 @@
                     <source src="Video/3D Character & Environment.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <figcaption>My 3D Character Design & Environment Design Video Showreel.</figcaption>
+                <figcaption data-lang="video-caption">My 3D Character Design & Environment Design Video Showreel.
+                </figcaption>
             </figure>
         </div>
+
         <div class="content">
-            <h2>Product 3D Modeling</h2>
+            <h2 data-lang="title-section-3">Product 3D Modeling</h2>
         </div>
         <div class="portfolio">
             <div class="image-container">
-                <img src="Image/Keyboard_1.png" alt="Mechanical Keyboard 3D Modeling 1" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Keyboard_1.png" data-lang="keyboard-1" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Keyboard_2.png" alt="Mechanical Keyboard 3D Modeling 2" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Keyboard_2.png" data-lang="keyboard-2" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Keyboard_3.png" alt="Mechanical Keyboard 3D Modeling 3" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Keyboard_3.png" data-lang="keyboard-3" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Keyboard_4.png" alt="Mechanical Keyboard 3D Modeling 4" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Keyboard_4.png" data-lang="keyboard-4" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Keyboard_5.png" alt="Mechanical Keyboard 3D Modeling 5" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Keyboard_5.png" data-lang="keyboard-5" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Keyboard_6.png" alt="Mechanical Keyboard 3D Modeling 6" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Keyboard_6.png" data-lang="keyboard-6" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
         </div>
     </main>
+
     <script src="DSON.js" defer></script>
+    <script src="translate.js"></script>
+
+    <div class="language-dropdown">
+        <div class="language-switch" id="languageSwitch">
+            <i class="bi bi-translate"></i>
+        </div>
+        <ul class="language-menu" id="languageMenu">
+            <li><a href="#" data-lang-select="en">ENG</a></li>
+            <li><a href="#" data-lang-select="zh">中</a></li>
+            <li><a href="#" data-lang-select="ms">BM</a></li>
+        </ul>
+    </div>
+
+    <button id="backToTop" class="back-to-top">
+        <i class="bi bi-caret-up-fill"></i>
+    </button>
+    <footer class="site-footer">
+        <p data-lang="footer-text">© 2025 DSON. All rights reserved.</p>
+    </footer>
+
 </body>
-<button id="backToTop" class="back-to-top">
-    <i class="bi bi-caret-up-fill"></i>
-</button>
-<footer class="site-footer">
-    <p>© 2025 DSON. All rights reserved.</p>
-</footer>
 
 </html>
