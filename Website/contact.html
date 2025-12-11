@@ -1,69 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Contact DSON | Send a Message | Multimedia Designer</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="title">Contact DSON | Send a Message | Multimedia Designer</title>
 
-        <meta name="description" content="Contact DSON, a multimedia designer specializing in video editing, illustration, 3D modeling, animation, UI/UX, and creative digital content. Send your message or collaboration request here.">
+    <link rel="stylesheet" href="DSON.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-        <meta name="keywords" content="DSON contact, multimedia designer contact, hire designer, video editor Malaysia, illustrator Malaysia, UI UX designer, 3D model artist, animation designer">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function () { emailjs.init({ publicKey: "NJRT3-4TjVfLih7n5" }); })();
+    </script>
+</head>
 
-        <link rel="canonical" href="https://dson3344.github.io/Website/contact.html">
-
-        <meta name="robots" content="index, follow">
-
-        <link rel="icon" type="image/png" href="Image/DSON logo.png">
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-        <link rel="stylesheet" href="DSON.css">
-
-        <meta property="og:title" content="Contact DSON | Multimedia Designer">
-        <meta property="og:description" content="Send a message or collaboration request to DSON, a multimedia designer specializing in video editing, illustration, UI/UX, 3D modeling, and creative content.">
-        <meta property="og:image" content="https://dson3344.github.io/Website/Image/DSON logo.png">
-        <meta property="og:url" content="https://dson3344.github.io/Website/contact.html">
-        <meta property="og:type" content="website">
-        <meta property="og:site_name" content="DSON Multimedia Design">
-
-        <meta property="og:see_also" content="https://www.instagram.com/dson_04/">
-        <meta property="og:see_also" content="https://www.youtube.com/@dson.0404">
-        <meta property="og:see_also" content="https://space.bilibili.com/318162425/">
-        <meta property="og:see_also" content="https://www.tiktok.com/@dson.04">
-        <meta property="og:see_also" content="https://www.xiaohongshu.com/user/profile/5d60f1db00000000010029cf">
-        <meta property="og:see_also" content="https://twitter.com/DSON_04">
-
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Contact DSON | Multimedia Designer">
-        <meta name="twitter:description" content="Reach out to DSON for collaboration, questions, or creative projects.">
-        <meta name="twitter:image" content="https://dson3344.github.io/Website/Image/DSON logo.png">
-
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script type="text/javascript">
-            (function(){
-                emailjs.init({ publicKey: "NJRT3-4TjVfLih7n5" });
-            })();
-        </script>
-    </head>
 <body class="body">
+
     <header>
         <div class="gradient-layer"></div>
         <div class="image-layer"></div>
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <nav class="navbar">
-            <a href="index.html">Home</a>
+            <a href="index.html" data-lang="nav-home">Home</a>
             <div class="dropdown">
-                <button class="dropbtn">Portfolio</button>
+                <button class="dropbtn" data-lang="nav-portfolio">Portfolio</button>
                 <div class="dropdown-content">
-                    <a href="illustration.html" id="link-illustration">Illustrations</a>
-                    <a href="3d-modeling.html" id="link-3dmodeling">3D Modeling</a>
-                    <a href="photo.html" id="link-photo">Photos</a>
-                    <a href="video.html" id="link-video">Videos</a>
-                    <a href="ui-ux.html" id="link-ui-ux">UI/UX</a>
+                    <a href="illustration.html" data-lang="nav-illustration">Illustrations</a>
+                    <a href="3d-modeling.html" data-lang="nav-3dmodeling">3D Modeling</a>
+                    <a href="photo.html" data-lang="nav-photo">Photos</a>
+                    <a href="video.html" data-lang="nav-video">Videos</a>
+                    <a href="ui-ux.html" data-lang="nav-uiux">UI/UX</a>
                 </div>
             </div>
-            <a href="socialmedia.html">Social Media</a>
-            <a href="contact.html">Contact Me</a>
+            <a href="socialmedia.html" data-lang="nav-socialmedia">Social Media</a>
+            <a href="contact.html" data-lang="nav-contact">Contact Me</a>
         </nav>
     </header>
 
@@ -71,34 +43,55 @@
 
     <main class="contact-main">
         <div class="contact-content">
-            <h2 class="contact-h2">Write Something for Me!</h2>
+            <h2 data-lang="contact-title">Write Something for Me!</h2>
             <form id="contactForm">
-                <label for="name" class="contact-label">Name (Full Name or Nickname)</label>
-                <input type="text" id="name" name="name" required placeholder="Enter your name" class="contact-input">
+                <label for="name" class="contact-label" data-lang="contact-name">Name (Full Name or Nickname)</label>
+                <input type="text" id="name" name="name" required data-lang-placeholder="Enter your name"
+                    placeholder="Enter your name" class="contact-input">
 
-                <label for="gender" class="contact-label">Gender (Male / Female)</label>
-                <input type="text" id="gender" name="gender" required placeholder="Enter your gender" class="contact-input">
-                
-                <label for="age" class="contact-label">Age (0 ~ 99+)</label>
-                <input type="number" id="age" name="age" required placeholder="Enter your age" class="contact-input">
+                <label for="gender" class="contact-label" data-lang="contact-gender">Gender (Male / Female)</label>
+                <input type="text" id="gender" name="gender" required data-lang-placeholder="Enter your gender"
+                    placeholder="Enter your gender" class="contact-input">
 
-                <label for="email" class="contact-label">Email</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email" class="contact-input">
-                
-                <label for="message" class="contact-label">Message</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Write your message here" class="contact-textarea"></textarea>
-                
-                <button type="submit" class="contact-btn">Send!</button>
+                <label for="age" class="contact-label" data-lang="contact-age">Age (0 ~ 99+)</label>
+                <input type="number" id="age" name="age" required data-lang-placeholder="Enter your age"
+                    placeholder="Enter your age" class="contact-input">
+
+                <label for="email" class="contact-label" data-lang="contact-email">Email</label>
+                <input type="email" id="email" name="email" required data-lang-placeholder="Enter your email"
+                    placeholder="Enter your email" class="contact-input">
+
+                <label for="message" class="contact-label" data-lang="contact-message">Message</label>
+                <textarea id="message" name="message" rows="5" required data-lang-placeholder="Write your message here"
+                    placeholder="Write your message here" class="contact-textarea"></textarea>
+
+                <button type="submit" data-lang="contact-btn" class="contact-btn">Send!</button>
             </form>
         </div>
     </main>
-    <script src="DSON.js" defer></script>
-    <script src="contact.js" defer></script>
-</body>
+
+    <div class="language-dropdown">
+        <div class="language-switch" id="languageSwitch">
+            <i class="bi bi-translate"></i>
+        </div>
+        <ul class="language-menu" id="languageMenu">
+            <li><a href="#" data-lang-select="en">ENG</a></li>
+            <li><a href="#" data-lang-select="zh">中</a></li>
+            <li><a href="#" data-lang-select="ms">BM</a></li>
+        </ul>
+    </div>
+
     <button id="backToTop" class="back-to-top">
         <i class="bi bi-caret-up-fill"></i>
     </button>
+
     <footer class="site-footer">
-        <p>© 2025 DSON. All rights reserved.</p>
+        <p data-lang="footer-text">© 2025 DSON. All rights reserved.</p>
     </footer>
+
+    <script src="DSON.js" defer></script>
+    <script src="translate.js" defer></script>
+    <script src="contact.js" defer></script>
+</body>
+
 </html>
