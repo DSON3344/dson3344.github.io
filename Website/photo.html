@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DSON Photography | Daytime, Night & Motion Photography Portfolio</title>
+    <title data-lang="title">DSON Photography | Daytime, Night & Motion Photography Portfolio</title>
 
     <link rel="canonical" href="https://dson3344.github.io/Website/photo.html">
 
@@ -50,63 +50,66 @@
         <div class="image-layer"></div>
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <nav class="navbar">
-            <a href="index.html">Home</a>
+            <a href="index.html" data-lang="nav-home">Home</a>
             <div class="dropdown">
-                <button class="dropbtn">Portfolio</button>
+                <button class="dropbtn" data-lang="nav-portfolio">Portfolio</button>
                 <div class="dropdown-content">
-                    <a href="illustration.html" id="link-illustration">Illustrations</a>
-                    <a href="3d-modeling.html" id="link-3dmodeling">3D Modeling</a>
-                    <a href="photo.html" id="link-photo">Photos</a>
-                    <a href="video.html" id="link-video">Videos</a>
-                    <a href="ui-ux.html" id="link-ui-ux">UI/UX</a>
+                    <a href="illustration.html" id="link-illustration" data-lang="nav-illustration">Illustrations</a>
+                    <a href="3d-modeling.html" id="link-3dmodeling" data-lang="nav-3dmodeling">3D Modeling</a>
+                    <a href="photo.html" id="link-photo" data-lang="nav-photo">Photos</a>
+                    <a href="video.html" id="link-video" data-lang="nav-video">Videos</a>
+                    <a href="ui-ux.html" id="link-ui-ux" data-lang="nav-uiux">UI/UX</a>
                 </div>
             </div>
-            <a href="socialmedia.html">Social Media</a>
-            <a href="contact.html">Contact Me</a>
+            <a href="socialmedia.html" data-lang="nav-socialmedia">Social Media</a>
+            <a href="contact.html" data-lang="nav-contact">Contact Me</a>
         </nav>
     </header>
 
     <div class="overlay" onclick="toggleMenu()"></div>
 
     <main>
+        <!-- Daytime -->
         <div class="content">
-            <h2>Daytime Photography</h2>
+            <h2 data-lang="photo-day">Daytime Photography</h2>
         </div>
+
         <div class="portfolio">
             <div class="image-container">
-                <img src="Image/Daytime 1.webp" alt="Sultan Abdul Samad Building" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Daytime 1.webp" data-lang="alt-day-1" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Daytime 2.webp" alt="Guan Di Temple" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Daytime 2.webp" data-lang="alt-day-2" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Daytime 3.webp" alt="Light Capture Cafe" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Daytime 3.webp" data-lang="alt-day-3" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Daytime 4.webp" alt="Independence Square" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Daytime 4.webp" data-lang="alt-day-4" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Daytime 5.webp" alt="Independence Square 2" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Daytime 5.webp" data-lang="alt-day-5" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Daytime 6.webp" alt="Independence Square 3" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Daytime 6.webp" data-lang="alt-day-6" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Daytime 7.webp" alt="Kwai Chai Hong" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Daytime 7.webp" data-lang="alt-day-7" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Daytime 8.webp" alt="Kwai Chai Hong 2" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Daytime 8.webp" data-lang="alt-day-8" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
         </div>
 
+        <!-- Modal -->
         <div id="imageModal" class="modal" onclick="closeModal(event)">
             <div class="modal-content" onclick="event.stopPropagation()">
                 <img id="modalImg" class="modal-image" />
@@ -116,85 +119,95 @@
             <div id="caption"></div>
         </div>
 
+        <!-- Night / Dusk -->
         <div class="content">
-            <h2>Dusk or Night Photography</h2>
+            <h2 data-lang="photo-night">Dusk or Night Photography</h2>
         </div>
+
         <div class="portfolio">
             <div class="image-container">
-                <img src="Image/Dusk 1.webp" alt="Thean Hou Temple" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Dusk 1.webp" data-lang="alt-dusk-1" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Dusk 2.webp" alt="Thean Hou Temple 2" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Dusk 2.webp" data-lang="alt-dusk-2" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Dusk 3.webp" alt="Thean Hou Temple 3" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Dusk 3.webp" data-lang="alt-dusk-3" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Dusk 4.webp" alt="Thean Hou Temple 4" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Dusk 4.webp" data-lang="alt-dusk-4" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
+            </div>
+
+            <div class="image-container">
+                <img src="Image/Night 1.webp" data-lang="alt-night-1" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Night 1.webp" alt="Petaling Street" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Night 2.webp" data-lang="alt-night-2" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Night 2.webp" alt="Petronas Twin Tower" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Night 3.webp" data-lang="alt-night-3" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Night 3.webp" alt="Petronas Twin Tower 2" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
-            </div>
-            <div class="image-container">
-                <img src="Image/Night 4.webp" alt="Petronas Twin Tower 3" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Night 4.webp" data-lang="alt-night-4" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
         </div>
 
+        <!-- Motion / Depth -->
         <div class="content">
-            <h2>Motion and Depth of Field</h2>
+            <h2 data-lang="photo-motion">Motion and Depth of Field</h2>
         </div>
+
         <div class="portfolio">
             <div class="image-container">
-                <img src="Image/Fast shutter 1.webp" alt="KLCC Park Fast Shutter Speed" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Fast shutter 1.webp" data-lang="alt-fast-1" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Fast shutter 2.webp" alt="Pavilion Bukit Bintang Fast Shutter Speed" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Fast shutter 2.webp" data-lang="alt-fast-2" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
+            </div>
+
+            <div class="image-container">
+                <img src="Image/Slow shutter 1.webp" data-lang="alt-slow-1" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Slow shutter 1.webp" alt="Bukit Bintang Cross Road Slow Shutter Speed" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Slow shutter 2.webp" data-lang="alt-slow-2" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
+            </div>
+
+            <div class="image-container">
+                <img src="Image/Greater depth 1.webp" data-lang="alt-depth-1" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Slow shutter 2.webp" alt="Bukit Bintang Cross Road Slow Shutter Speed 2" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Greater depth 2.webp" data-lang="alt-depth-2" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
+            </div>
+
+            <div class="image-container">
+                <img src="Image/Shallow depth 1.webp" data-lang="alt-shallow-1" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
             <div class="image-container">
-                <img src="Image/Greater depth 1.webp" alt="Bukit Bintang Skybridge Greater Depth" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
-            </div>
-            <div class="image-container">
-                <img src="Image/Greater depth 2.webp" alt="Petaling Street Market Greater Depth" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
-            </div>
-            <div class="image-container">
-                <img src="Image/Shallow depth 1.webp" alt="Snail Shallow Depth" loading="lazy" onclick="openModal(this)"
-                    onerror="this.src='Image/placeholder.png'">
-            </div>
-            <div class="image-container">
-                <img src="Image/Shallow depth 2.webp" alt="Snail Shallow Depth 2" loading="lazy"
-                    onclick="openModal(this)" onerror="this.src='Image/placeholder.png'">
+                <img src="Image/Shallow depth 2.webp" data-lang="alt-shallow-2" loading="lazy" onclick="openModal(this)"
+                    onerror="this.src='Image/placeholder.png'" alt="">
             </div>
         </div>
 
+        <!-- Photo Editing -->
         <div class="content">
-            <h2>Photo Editing</h2>
+            <h2 data-lang="photo-edit">Photo Editing</h2>
         </div>
+
         <div class="photo-section">
             <div class="img-comp-container">
                 <div class="img-comp-img">
@@ -203,8 +216,9 @@
                 <div class="img-comp-img img-comp-overlay">
                     <img src="Image/chess.webp" loading="lazy" width="500" height="357">
                 </div>
-                <p>Chess Neon Light Effect</p>
+                <p data-lang="edit-chess">Chess Neon Light Effect</p>
             </div>
+
             <div class="img-comp-container">
                 <div class="img-comp-img">
                     <img src="Image/cyberpunk street ori.webp" loading="lazy" width="500" height="357">
@@ -212,8 +226,9 @@
                 <div class="img-comp-img img-comp-overlay">
                     <img src="Image/cyberpunk street.webp" loading="lazy" width="500" height="357">
                 </div>
-                <p>Cyberpunk Street Effect</p>
+                <p data-lang="edit-cyber">Cyberpunk Street Effect</p>
             </div>
+
             <div class="img-comp-container">
                 <div class="img-comp-img">
                     <img src="Image/80's nostalgic style ori.webp" loading="lazy" width="500" height="357">
@@ -221,8 +236,9 @@
                 <div class="img-comp-img img-comp-overlay">
                     <img src="Image/80's nostalgic style.webp" loading="lazy" width="500" height="357">
                 </div>
-                <p>80's Nostalgic Style</p>
+                <p data-lang="edit-80s">80's Nostalgic Style</p>
             </div>
+
             <div class="img-comp-container">
                 <div class="img-comp-img">
                     <img src="Image/Shinkai Makoto Ori.webp" loading="lazy" width="500" height="357">
@@ -230,8 +246,9 @@
                 <div class="img-comp-img img-comp-overlay">
                     <img src="Image/Shinkai Makoto Style.webp" loading="lazy" width="500" height="357">
                 </div>
-                <p>Shinkai Makoto Style Effect</p>
+                <p data-lang="edit-makoto">Shinkai Makoto Style Effect</p>
             </div>
+
             <div class="img-comp-container">
                 <div class="img-comp-img">
                     <img src="Image/City night scene green and orange style ori.webp" loading="lazy" width="500"
@@ -241,20 +258,32 @@
                     <img src="Image/City night scene green and orange style.webp" loading="lazy" width="500"
                         height="357">
                 </div>
-                <p>City Night Scene Effect</p>
+                <p data-lang="edit-city">City Night Scene Effect</p>
             </div>
         </div>
     </main>
+
+    <div class="language-dropdown">
+        <div class="language-switch" id="languageSwitch">
+            <i class="bi bi-translate"></i>
+        </div>
+        <ul class="language-menu" id="languageMenu">
+            <li><a href="#" data-lang-select="en">ENG</a></li>
+            <li><a href="#" data-lang-select="zh">中</a></li>
+            <li><a href="#" data-lang-select="ms">BM</a></li>
+        </ul>
+    </div>
 
     <button id="backToTop" class="back-to-top">
         <i class="bi bi-caret-up-fill"></i>
     </button>
 
     <footer class="site-footer">
-        <p>© 2025 DSON. All rights reserved.</p>
+        <p data-lang="footer-text">© 2025 DSON. All rights reserved.</p>
     </footer>
 
     <script src="DSON.js" defer></script>
+    <script src="translate.js"></script>
 </body>
 
 </html>
