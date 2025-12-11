@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="000p2yyEeZKvQ0WaluYFg7w-4vJ_XlGFzqem7-CIhNY" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSON | Multimedia Design Portfolio</title>
+    <title data-lang="title">DSON | Multimedia Design Portfolio</title>
     <meta name="description"
         content="Explore the multimedia design portfolio of DSON, featuring video editing, digital illustration, 3D modeling, animation, UI/UX design, and esports content creation.">
 
@@ -66,19 +66,19 @@
         <div class="image-layer"></div>
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <nav class="navbar">
-            <a href="index.html">Home</a>
+            <a href="index.html" data-lang="nav-home">Home</a>
             <div class="dropdown">
-                <button class="dropbtn">Portfolio</button>
+                <button class="dropbtn" data-lang="nav-portfolio">Portfolio</button>
                 <div class="dropdown-content">
-                    <a href="illustration.html" id="link-illustration">Illustrations</a>
-                    <a href="3d-modeling.html" id="link-3dmodeling">3D Modeling</a>
-                    <a href="photo.html" id="link-photo">Photos</a>
-                    <a href="video.html" id="link-video">Videos</a>
-                    <a href="ui-ux.html" id="link-ui-ux">UI/UX</a>
+                    <a href="illustration.html" data-lang="nav-illustration">Illustrations</a>
+                    <a href="3d-modeling.html" data-lang="nav-3dmodeling">3D Modeling</a>
+                    <a href="photo.html" data-lang="nav-photo">Photos</a>
+                    <a href="video.html" data-lang="nav-video">Videos</a>
+                    <a href="ui-ux.html" data-lang="nav-uiux">UI/UX</a>
                 </div>
             </div>
-            <a href="socialmedia.html">Social Media</a>
-            <a href="contact.html">Contact Me</a>
+            <a href="socialmedia.html" data-lang="nav-socialmedia">Social Media</a>
+            <a href="contact.html" data-lang="nav-contact">Contact Me</a>
         </nav>
     </header>
 
@@ -101,16 +101,16 @@
                 </div>
             </div>
             <div class="right">
-                <h2>About Me</h2>
-                <p>
-                    Hi! I’m <strong>Chang Dick Shen</strong>, My nickname is called <strong>DSON</strong>. I'm a
+                <h2 data-lang="about-title">About Me</h2>
+                <p data-lang="about-1">
+                    Hi! I’m <strong>Chang Dick Shen</strong>, but you can call me <strong>DSON</strong>. I'm a
                     multimedia design student with a deep passion for crafting engaging and meaningful digital
                     experiences.
-                    My expertise lies in video editing, UI/UX design, and I also enjoy diving into the worlds of
-                    animation and game design.
+                    My expertise includes video editing, UI/UX design, and I also enjoy exploring the creative worlds
+                    of animation and game design.
                 </p>
-                <p>
-                    I actively share my creative journey across multiple platforms, including
+                <p data-lang="about-2">
+                    I actively share my creative content across multiple platforms, including
                     <strong><a href="https://www.youtube.com/@dson.0404" target="_blank">YouTube</a></strong>,
                     <strong><a href="https://space.bilibili.com/318162425/" target="_blank">Bilibili</a></strong>,
                     <strong><a href="https://www.instagram.com/dson_04/" target="_blank">Instagram</a></strong>,
@@ -118,13 +118,12 @@
                     <strong><a href="https://www.xiaohongshu.com/user/profile/5d60f1db00000000010029cf"
                             target="_blank">Xiaohongshu (Rednote)</a></strong>,
                     and <strong><a href="https://twitter.com/DSON_04" target="_blank">X (Twitter)</a></strong>.
-                    Among them, YouTube and Bilibili are my primary spaces for content creation.
-                    If you're a fellow fan of <em>Call of Duty Mobile</em>, let’s connect and explore its exciting
-                    universe together!
+                    Among these platforms, YouTube and Bilibili are my primary spaces for sharing my creative work.
                 </p>
-                <p>
+                <p data-lang="about-3">
                     My mission is to transform creativity into work that resonates, inspires, and connects.
-                    Feel free to browse my portfolio or reach out through social media—I’d love to share my passion with
+                    Feel free to browse my portfolio or reach out through social media. I’d love to share my passion
+                    with
                     you!
                 </p>
             </div>
@@ -143,13 +142,23 @@
         </div>
     </main>
     <script src="DSON.js" defer></script>
+    <script src="translate.js"></script>
 </body>
+<div class="language-dropdown">
+    <div class="language-switch" id="languageSwitch">
+        <i class="bi bi-translate"></i>
+    </div>
+    <ul class="language-menu" id="languageMenu">
+        <li><a href="#" data-lang-select="en">ENG</a></li>
+        <li><a href="#" data-lang-select="zh">中</a></li>
+        <li><a href="#" data-lang-select="ms">BM</a></li>
+    </ul>
+</div>
 <button id="backToTop" class="back-to-top">
     <i class="bi bi-caret-up-fill"></i>
 </button>
 <footer class="site-footer">
-    <p>© 2025 DSON. All rights reserved.</p>
+    <p data-lang="footer-text">© 2025 DSON. All rights reserved.</p>
 </footer>
 
 </html>
-
